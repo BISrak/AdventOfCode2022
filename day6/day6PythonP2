@@ -1,0 +1,26 @@
+
+#for sample answer is 5
+#also there is only 1 line in this data
+def main():
+    answer = getprocesssedletters()
+    print(answer)
+
+def getprocesssedletters():
+    input = open("C:\GitHub\AdventOfCode2022\day6\day6input.txt", "r")
+    print("process started")
+    for line in input:
+        fourteen_letter_list = []
+        every_letter = []
+        for i in range(len(line)):
+            every_letter.append(line[i])
+            if i < 14:
+                fourteen_letter_list.append(line[i])
+            else:
+                fourteen_letter_list.pop(0)
+                fourteen_letter_list.append(line[i])
+            if len(set(fourteen_letter_list)) > 13:
+                return (len(every_letter))
+            
+main()
+
+# answer 3444
